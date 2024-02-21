@@ -165,7 +165,7 @@ Install Firefox or Chrome.
 (Safari will also work.)
 Mic-rosoft Edge is not modern, despite what Microsoft might try and otherwise tell you.
 
-## Checking your install
+### Checking your install
 
 Now that you've installed everything it's time to check that everything works as expected!
 Type the following into your terminal:
@@ -179,7 +179,7 @@ If you followed these instructions step-by-step and cannot resolve the issue ple
 Yeah, you did! Great job!
 
 
-## Getting the workshop content
+### Getting the workshop content
 
 Now that you have installed the required software (or not) to follow the workshop, it's time to gather the respective
 materials. Please use the `tab` matching your setup.
@@ -207,7 +207,7 @@ To get things up and running, please follow these steps:
 If you want to go through the content of this workshop without installing anything on your machine, you should chose this approach. To see all the notebooks and slides from this workshop, please use this [Jupyter NBviewer link](https://nbviewer.jupyter.org/github/peerherholz/workshop_weizmann/blob/main/workshop/workshop_weizmann_overview.ipynb).
 ```
 
-## Enter the matrix
+### Enter the matrix
 
 Once you reached this point, you should be ready the enter the matrix and follow the workshop in your preferred way. Congrats, fantastic work!
 
