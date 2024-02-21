@@ -30,7 +30,7 @@ If you foresee any of these being a problem please reach out to one of the instr
 ### Some quick general notes on instructions
 
 - If you already have some of these things installed on your computer already that should (theoretically) be okay.
-  However, you need to make sure that you are able to complete the steps described in [checking your install](#checking-your-install) without issue.
+  However, you need to make sure that you are able to complete the steps described in `checking your install` section below without issue.
   - This is mainly to see if your Docker installation is actually working!
 
 ### OS-specific installation instructions
@@ -68,8 +68,6 @@ From this point on whenever the instructions specify to "open a terminal" please
 1. Leave all the defaults during the installation with the following exception:
       - Please make sure the box labelled "Register Code as an editor for supported file types" is selected
 
-##### Take some time to fix this
-´´´
 
 **Docker**
 
@@ -78,8 +76,8 @@ From this point on whenever the instructions specify to "open a terminal" please
 Unfortunately, Docker for Windows is again a bit trickier. 
 
 -----------------------
-
 ```
+
 
 ```{tab-item} Linux
 **Bash shell**
@@ -180,8 +178,6 @@ If you followed these instructions step-by-step and cannot resolve the issue ple
 
 Yeah, you did! Great job!
 
-![logo](https://media1.tenor.com/images/d5ebabf248130ec3842ed3b8627fd4f2/tenor.gif?itemid=4770158)\
-<sub><sup><sub><sup>https://media1.tenor.com/images/d5ebabf248130ec3842ed3b8627fd4f2/tenor.gif?itemid=4770158</sup></sub></sup></sub>
 
 ## Getting the workshop content
 
