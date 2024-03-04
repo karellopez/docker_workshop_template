@@ -27,13 +27,13 @@ There are a few computing requirements for the course that are absolutely necess
 
 If you foresee any of these being a problem please reach out to one of the instructors too see what steps you can take to ensure you are ready for the course start.
 
-### Some quick general notes on instructions
+## Some quick general notes on instructions
 
 - If you already have some of these things installed on your computer already that should (theoretically) be okay.
   However, you need to make sure that you are able to complete the steps described in `checking your install` section below without issue.
   - This is mainly to see if your Docker installation is actually working!
 
-### OS-specific installation instructions
+## OS-specific installation instructions
 
 Select the tab that corresponds to your operating system and follow the instructions therein.
 
@@ -61,23 +61,16 @@ Windows doesn't come with a preinstalled bash shell. To remedy this we will rely
 
 From this point on whenever the instructions specify to "open a terminal" please assume you are supposed to open the Ubuntu application.
 
-
 **VSCode**
 
 1. Go to https://code.visualstudio.com/ and click the download button, then run the `.exe` file.
 1. Leave all the defaults during the installation with the following exception:
       - Please make sure the box labelled "Register Code as an editor for supported file types" is selected
 
-
 **Docker**
 
------------------------
-
 Unfortunately, Docker for Windows is again a bit trickier. 
-
------------------------
 ```
-
 
 ```{tab-item} Linux
 **Bash shell**
@@ -149,17 +142,17 @@ One of the instructors will try and get back to you quickly to help resolve the 
 If they're unable to help via Discord, you may be directed to attend one of the installation office hours.
 
 
-### GitHub account
+## GitHub account
 
 Go to https://github.com/join/ and follow the on-screen instructions to create an account.
 It is a good idea to associate this with your university e-mail (if you have one) as this will entitle you to sign up for the [GitHub Student Developer Pack](https://education.github.com/pack) or [GitHub for teachers](https://education.github.com/teachers) which come with some nice free bonuses.
 
-### Discord
+## Discord
 
 Go to https://discord.com/ and download and install Discord. Please note, that you can also use Discord through your browser if you don't want to download it.
 You will be invited to the course channel via e-mail.
 
-### Modern web browser
+## Modern web browser
 
 Install Firefox or Chrome.
 (Safari will also work.)
