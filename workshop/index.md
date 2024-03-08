@@ -5,12 +5,11 @@
 
 # Welcome!
 
-Hello everyone and welcome to the "Software containers in neuroscience research" workshop conducted at INSERT_INSTITUTE_LOCATION_HERE, we're glad to see you here!
-
 Hello everyone and welcome to the "Docker for Neuroscience" workshop conducted at Oldenburg University, we're glad to see you here!
 
-Within these pages, we provide information on how to do the basic setup for the workshop and refresh or gain all the necesary skills you'll need for our workshop. This [jupyter book](https://jupyterbook.org/intro.html) will include all the necessary info. Simply follow this link --- 
+Within these pages, we provide information on how to do the basic setup for the workshop and refresh or gain all the necesary skills you'll need for our workshop. This [jupyter book](https://jupyterbook.org/intro.html) will include all the necessary info. Simply follow this [invite link](https://discord.gg/ehN5haXS)
 
+If you’d rather download these materials, you can do so via the {download} symbol at the top of the respective page. You can open the respective content (.md files) via an IDE (e.g. VScode, Atom) or via Jupyter Notebooks/Lab.
 
 # I've got a question!
 
