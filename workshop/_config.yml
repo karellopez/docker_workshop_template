@@ -5,9 +5,9 @@
 
 #######################################################################################
 # Book settings
-title                       : "Software containers in neurosciene research"  # The title of the book. Will be placed in the left navbar.
-author                      : Peer Herholz  # The author of the book
-copyright                   : "2018"  # Copyright year to be placed in the footer
+title                       : "Docker for neuroscience"  # The title of the book. Will be placed in the left navbar.
+author                      : Michael Ernst, Aaron Reer  # The author of the book
+copyright                   : "2024"  # Copyright year to be placed in the footer
 logo                        : "static/workshop.png"  # A path to the book logo
 exclude_patterns            : []  # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
 
@@ -41,7 +41,7 @@ launch_buttons:
   thebe                     : false  # Add a thebe button to pages (requires the repository to run on Binder)
 
 repository:
-  url                       : https://github.com/PeerHerholz/docker_workshop  # The URL to your book's repository
+  url                       : https://github.com/DiLER-Digitell/docker_workshop_setup  # The URL to your book's repository
   path_to_book              : "workshop/"  # A path to your book's folder, relative to the repository root.
   branch                    : main  # Which branch of the repository should be used when creating links
 
