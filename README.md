@@ -1,6 +1,3 @@
-<img src="https://github.com/PeerHerholz/docker_workshop/workshop/static/workshop_logo.png" alt="workshop logo" width="300" style="margin:0 0 0 0"/>
-
-[![GitHub size](https://github-size-badge.herokuapp.com/peerherholz/docker_workshop.svg)](https://github.com/peerherholz/docker_workshop/archive/main.zip)
 [![License](https://img.shields.io/github/license/peerherholz/docker_workshop)](https://github.com/PeerHerholz/docker_workshop)
 
 # Welcome!
