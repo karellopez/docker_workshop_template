@@ -79,7 +79,7 @@ From this point on whenever the instructions specify to "open a terminal" please
 
 Unfortunately, getting Docker to work on Windows is a tad more complicated. 
 
-   1. Download the installer using the download button at the top of the page, or from the release notes. 
+   1. Download the installer from this [website](https://www.docker.com/products/docker-desktop/). 
    2. Double-click Docker Desktop Installer.exe to run the installer. By default, Docker Desktop is installed at C:\Program Files\Docker\Docker. 
    3. When prompted, ensure that "Use WSL 2" instead of Hyper-V option on the Configuration page is selected. 
    4. If your system only supports one of the two options, you will not be able to select which backend to use. 
