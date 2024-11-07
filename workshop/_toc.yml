@@ -1,7 +1,7 @@
-root: index
+root: start
 format: jb-book
 chapters:
-- file: intro
-- file: prerequisites
+- file: introduction
+- file: metrics
   sections:
-    - file: prerequisites/intro_to_shell 
+    - file: metrics/intro_to_shell 
