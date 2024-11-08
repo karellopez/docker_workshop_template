@@ -1,4 +1,4 @@
-root: start
+root: index
 format: jb-book
 chapters:
 - file: introduction
