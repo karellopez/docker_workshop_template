@@ -2,10 +2,11 @@ root: index
 format: jb-book
 chapters:
 - file: introduction
-- file: report
+- file: metrics
   sections:
-    - file: report/intro_to_shell 
+    - file: metrics/intro_to_shell 
 - file: installation #guide github and pip install
+- file: run
 # sections:
 #   - file: python environment
 #   - packages: ancpbids, mne, pandas, plotty
