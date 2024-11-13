@@ -3,13 +3,8 @@ format: jb-book
 chapters:
 - file: introduction
 - file: metrics
-  sections:
-    - file: metrics/intro_to_shell 
 - file: installation #guide github and pip install
-- file: run
-# sections:
-#   - file: python environment
-#   - packages: ancpbids, mne, pandas, plotty
-#- configuration: pathsets for both metrics and plotting
-#               # explain parameters
-#             # GUI
+- file: run_calculation
+  sections:
+    - file: run_calculation/settings_explanation
+- file: run_plotting
