@@ -2,23 +2,24 @@
 
 The **settings.ini** file not only specifies the data directory path and subjects to be analyzed, but also contains an extensive array of customizable parameters.
 
-The MEGqc pipeline parameters were selected and estimated to be suitable to the greatest amount of datasets, so the users don't need to select them manually. However, all these parameters are gathered and nicely organized in this script, so researches can edit them to adjust eh pipeline to their specific goals and   research needs.
+The MEGqc pipeline parameters were selected and estimated to be suitable to the greatest amount of datasets, so the users don't need to adjust them, but they can if needed.
 
-In this section we'll provide an overview of each parameter group, explaining their purpose and how they can be customized.
+The settings file is organized into groups corresponding to each metric. In this section we'll provide an overview of each parameter group, explaining their purpose and how they can be customized.
 
+## Key pipileine parameters
 
 |**Variable**|**Default Value**|**type**|**Description**|
 |---     |---           |---         |--- |
 |**ch_types**| mag, grad|string|defines which channels to process.|
 |**STD, PSD, PTP_manual, PTP_auto_mne, ECG, EOG, Head, Muscle**| All true except Head|boolean|activates or deactivates one of the calculation modules. Head is deactivate by default because normally the user doesn't posses the cHPI data to estimate subject's head positions.|
 |**data_crop_tmin**|0| |Crop the data, time in seconds|
-|**data_crop_tmax**|120| |Crop the data, time in seconds. If you want to use the entire recording, you can leave one or both parameters blank.|
+|**data_crop_tmax**|120| |Crop the data, time in seconds. If you want to use the entire recording, you can leave one or both parameters blank. This significly reduces the processing time.|
 |**plot_mne_butterfly**|False| boolean||
-|**plot_interactive_time_series**|False|boolean|Plot interactive time series (each channel on top of others, separated by ch type: mags, grads). This plot may signifcantly increase the time it takes to run the script. If you want to run the script faster, set this to False. Plot will be done on the data resampled to 100Hz/sec. |
+|**plot_interactive_time_series**|False|boolean|Plot interactive time series in the report ot not (each channel on top of others, separated by ch type: mags, grads). This plot may signifcantly increase the time it takes to run the script and the size of the HTML report. If you want to run the script faster, set this to False. Plot will be done on the data resampled to 100Hz/sec. |
 |**plot_interactive_time_series_average**|False|boolean|Plot interactive time series average (average over all channels of each type: mags, grads). Plot will be done on the data resampled to 100Hz/sec.|
-|**verbose_plots**|Flase|boolean|Show plots when running the script.|
+|**verbose_plots**|Flase|boolean|Intended for pipeline maintanance rather than users, it displays plots when running the script, not only on the in the final report.|
 
-## Filtering
+## Filtering parameters
 
 |**Variable**|**Default Value**|**type**|**Description**|
 |---     |---           |---         |--- |
@@ -28,17 +29,20 @@ In this section we'll provide an overview of each parameter group, explaining th
 |h_freq|140|int or float|higher frequency for bandpass filter.|
 |method |iir|string|Method for filtering|
 
-## Epoching
+## Epoching parameters
 
 |**Variable**|**Default Value**|**type**|**Description**|
 |---     |---           |---         |--- |
 |event_durr|0.2|float| the duration of the event in seconds.|
 |epoch_tmin|-0.2|float| time before the event, in seconds|
 |epoch_tmax|1|float|time after the event, in seconds|
-|stim_channel| |string| Leave empty if want it to be detected automaticall or write explicetly|
+|stim_channel| |string|The stimulus channels, leave empty if you want it to be detected automatically or write explicetly. If it's not identifiable, the analysis will continue without epoch separation|
 |even_repeated|merge|string| How to handle duplicates in events. Can be 'error' to raise an error, ‘drop’ to only retain the row occurring first in the events, or 'merge' to combine the coinciding events (=duplicates) into a new event (see Notes for details).|
 
-## STD
+## Quality Metrics Parameters
+The settings file already includes default parameters, which can be adjusted as needed. For example, you can modify the frequency range for the PSD (default: 0 to 140 Hz) or tweak parameters that control the sensitivity of the peak detection algorithm, such as those used to analyze an ECG channel recording.
+
+### STD
 
 |**Variable**|**Default Value**|**type**|**Description**|
 |---     |---           |---         |--- |
@@ -47,7 +51,7 @@ In this section we'll provide an overview of each parameter group, explaining th
 |noisy_channel_multiplied|1.2|float or int|Multiplier to define noisy channel, if std of this channel for this epoch is over (the mean std of this channel for all epochs  together* multipliar), then this channel is noisy. The higher the value, the less channels are marked as noisy|
 |flat_multiplied|0.5|float or int|Multiplier to define flat channel, if std of this channel for this epoch is under (the mean std of this channel for all epochs together*  multipliar), then this channel is flat|
 
-## PSD
+### PSD
 
 |**Variable**|**Default Value**|**type**|**Description**|
 |---     |---           |---         |--- |
@@ -55,7 +59,7 @@ In this section we'll provide an overview of each parameter group, explaining th
 |freq_max|140|int or float|higher frequency for PSD calculation in Hz|
 |psd_step_size|0.5|float or int| frequency resolution of the PSD in Hz|
 
-## PTP_manual
+### PTP_manual
 
 |**Variable**|**Default Value**|**type**|**Description**|
 |---     |---           |---         |--- |
@@ -68,18 +72,8 @@ In this section we'll provide an overview of each parameter group, explaining th
 |ptp_top_limit | 1e-12 | | this variable and the following are not used. In case instead of by std levle, we want to use Tesla.|
 |ptp_bottom_limit| -1e-12|  ||
 
-## PTP_auto
 
-|**Variable**|**Default Value**|**type**|**Description**|
-|---     |---           |---         |--- |
-| peak_m | 4e-14 | float or int|  minimal PTP amplitude to count as peak for magnetometers. Unit: Tesla or Tesla/meter depending on channel type|
-| peak_g | 4e-14 | float or int | minimal PTP amplitude to count as peak for gradiometers. Unit: Tesla or Tesla/meter depending on channel type |
-| flat_m | 3e-14 | float or int | max PTP amplitude to count as flat for magnetometers. Unit: Tesla or Tesla/meter depending on channel type|
-|flat_g | 3e-14 | float or int | max PTP amplitude to count as flat for gradiometers. Unit: Tesla or Tesla/meter depending on channel type|
-| bad_percent | 5 |int | The percentage of the time a channel can be above or below thresholds. Below this percentage, Annotations are created. Above this percentage, the channel involved is return in bads. Note the returned bads are not automatically added to info['bads']. 
-| min_duration | 0.002 | float | The minimum duration (s) required by consecutives samples to be above peak or below flat thresholds to be considered. to consider as above or below threshold. For some systems, adjacent time samples with exactly the same value are not totally uncommon. Unit: seconds. |
-
-## PTP_auto
+### PTP_auto
 |**Variable**|**Default Value**|**type**|**Description**|
 |---     |---           |---         |--- |
 | peak_m | 4e-14 | float or int |minimal PTP amplitude to count as peak for magnetometers. Unit: Tesla or Tesla/meter depending on channel type|
@@ -89,7 +83,7 @@ In this section we'll provide an overview of each parameter group, explaining th
 |bad_percent |5|int|The percentage of the time a channel can be above or below thresholds. Below this percentage, Annotations are created. Above this percentage, the channel involved is return in bads. Note the returned bads are not automatically added to info['bads']. Unit: percent.|
 |min_duration|0.002|float|The minimum duration (s) required by consecutives samples to be above peak or below flat thresholds to be considered. to consider as above or below threshold. For some systems, adjacent time samples with exactly the same value are not totally uncommon. Unit: seconds.|
 
-## ECG
+### ECG
 _This channel data will be scaled from 0 to 1, so the setting is universal for all data sets. The peaks will be detected on the scaled data. The average std of all peaks has to be within the allowed range; if it is higher, the channel has too high deviation in peaks height and is counted as noisy._
 
 |**Variable**|**Default Value**|**type**|**Description**|
@@ -103,7 +97,7 @@ _This channel data will be scaled from 0 to 1, so the setting is universal for a
 |thresh_lvl_peakfinder | 5|int|higher - more peaks will be found on the ecg artifact for both separate channels and average overall. As a result, average over all may change completely, since it is centered around the peaks of 5 most prominent channels.|
 
 
-## EOG
+### EOG
 _This channel data will be scaled from 0 to 1, so the setting is universal for all data sets. The peaks will be detected on the scaled data. The average std of all peaks has to be within the allowed range; if it is higher, the channel has too high deviation in peaks height and is counted as noisy._
 
 |**Variable**|**Default Value**|**type**|**Description**|
@@ -114,7 +108,7 @@ _This channel data will be scaled from 0 to 1, so the setting is universal for a
 |gaussian_sigma|6|int|The sigma of the gaussian kernel used to smooth the data. The higher the sigma, the more smoothing. Typically EOG data is more noisy than EG nd requires larger sigma.|
 |thresh_lvl_peakfinder|3|int|the higher the value, the more peaks will be found on the eog artifact for both separate channels and average overall. As a result, average over all may change completely, since it is centered around the peaks of 5 most prominent channels.|
 
-## Muscle
+### Muscle
 
 |**Variable**|**Default Value**|**type**|**Description**|
 |---     |---           |---         |--- |
