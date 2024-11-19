@@ -3,7 +3,8 @@ format: jb-book
 chapters:
 - file: introduction
 - file: metrics
-- file: installation #guide github and pip install
+- file: installation 
+- file: dataset
 - file: run_calculation
   sections:
     - file: run_calculation/settings_explanation
