@@ -1,53 +1,49 @@
-# MEGQc report:
+# MEGQc report
 
-Every metric generates an html report with interactive figures. In this section we'll overview these same figures from one subject of the dataset ds003483, which Gaponsetva (2023) used to evaluate the MEGqc tool. 
+Every metric generates its own HTML report with interactive figures. In this section we'll overview these reports using data from one subject in the dataset _ds003483_, which Gaponsetva (2023) used to evaluate the MEGqc tool. 
 
-All the figures in these reports are interactive: as you scroll through them, you can zoom in and out, reveal the legend on hover, hide/show specific epochs or channels within a specific region just by clicking...  Unfortunately, this interactive feature is lost in this tutorial, as we'll work with screenshots.
+All the figures in these reports are interactive: you can zoom in and out, reveal legends on hover, hide/show specific epochs or channels within a specific region just by clicking. Unfortunately, this interactive feature is lost in this tutorial, as we'll work with screenshots.
 
-As in this tutorial we'll work with this same dataset, you'll be able to obtain these same reports and explore the interactive componentby yourself.
+Since in this tutorial we'll work with the same dataset (subject-009 from the dataset _ds003483_), you'll be able to obtain these same reports yourself and explore the interactive features.
 
 ## Raw Information
 
-The following information is not directly visible in this report, but it's important to understand it. MEG QC extracts the data as an MNE Raw class object. The Raw object includes metadata such as the channels' details, distinguising among Gradiometers and Magnetometers (more on that later), EOG and ECG channels, sampling frequency, filters applied, and so on.
+The following information is not directly visible in this report, but it's important to understand. MEGqc extracts the data as an MNE Raw class object. The Raw object includes metadata such as  channels' details, distinguising among Gradiometers and Magnetometers (more on that later), EOG and ECG channels, sampling frequency, applied filters, and more.
 
 ![Raw Info](static/00)
 
-## Sensors positions
+## Sensor Positions
 
-Almost every report starts with this visual representation of the spatial distribution of MEG sensors on the subject's head. The sensors are divided into eight color-coded groups representing different lobes. The same color-code will be used pretty often through the reports.
-Every sensor dot has 3 different identifiers:
-- 1 Magnetometer: They measure the magnetic field directly, providing data on its strength and direction. They are more sensitive to distant source, so they are more vulnerable to external magnetic noise. Their lables end with '1' like 'MEG1011'.
-- 2 Gradiometers: These sensors measure the gradient of the magentic field, so the difference between 2 measuremenets. It filters out environemntal noise. Their labels end with '2' and '3' like 'MEG0112' and 'MEG0113'. 
-
+Almost every report starts with this visual representation of the spatial distribution of MEG sensors on the subject's head. The sensors are divided into eight color-coded groups representing different lobes. This same color coding will be used frequently throughout the reports. Each sensor dot in the plot has 3 different identifiers:
+- 1 Magnetometer: it measures the magnetic field directly, providing data on its strength and direction. It is more sensitive to distant source, making it more vulnerable to external magnetic noise. Its label ends with '1', like 'MEG1011'.
+- 2 Gradiometers: These sensors measure the gradient of the magentic field, so the difference between 2 measurements. This setup helps filter out environemntal noise. Their labels end with '2' and '3', such as 'MEG0112' and 'MEG0113'. 
 
 ![Sensor distribution](static/01)
 
-The identifiers pop-up on hovering with the mouse in the interactive .html. 
+The identifiers pop up on hovering oveer the sensor dot in the interactive HTML. 
 
-Many of the reports include 2 sets of results: one for the Magnetometers and a second one for Gradiometers. Here we'll just overview the set for Magnetometers, but the one for Gradiometers follow the same logic.
+Also, many reports include 2 sets of results: one for the Magnetometers and another set for the Gradiometers. This tutorial focuses on Magnetometers, but the Gradiometers set of results follow the same logic.
 
 ## Metrics
 
 ### Standard deviation of the data
 
-The Standard Deviation (STD) metric measures the variability of each channels. If some channels show much higher or lower STD than others,  it suggest potential malfunctions of the channels (Gapontseva, 2023). 
+The Standard Deviation (STD) metric measures the variability of each channel. If some channels show much higher or lower STD than others, it suggest potential malfunctions (Gapontseva, 2023).
+Each dot represents the standard deviation of a Magnetometer channel over the entire time series. The sensors are colored according to the regions of the Sensor Distribution plot. Hovering over a dot reveals the standard deviation value. The position of the points on the Y axis are not meaningful, they are just for visualization purposes.     
+Channels with values exceeding (or below) a certain amount of standard deviations from the average are flagged as noisy (or flat), indicating potential outliers.     
 
-In the first box plot every dot represents the standard deviation of each Magnetometer channel over the entire time series. The sensors are colored following the region distribution of the previous plot. If you hover over the dot you'll see the standard deviation value. You can also deactivate or activate sensors from specific brain regions. The position of the points on the Y axis are not meaningful, they are just for visualization purposes.     
-Channels with values that exceed (or is below) a certain amount of standard deviations from the average are labeled as noisy (or flat), it means that that specific sensor might be a potentital outlier over the entire time series.     
-
-
+ 
 ![STD over the entire time series](static/01_std/01)
 
-In the second figure, the data is divided into epochs, each box plot in this figure corresponds to a channel or sensor, and each point represents the standard deviation for that sensor during an individual epoch. These epochs are created by segmenting the continuous MEG recording basend on triggers in the dataset. The time window for each epoch is defined within the settings. By hovering over any of the points, users can read the specific epoch represented. 
-This plot helps asses the variability of each sensor's signal across different time windows (epochs). Sensors with points outside the whiskers indicate higher variability, potential artifacts or irregularities in specific epochs. 
+In the second figure, the data is divided into epochs. Each box plot corresponds to a channel or sensor, and each point represents the standard deviation for that sensor during an individual epoch. Epochs are created by segmenting the continuous MEG recording basend on triggers in the dataset. By hovering over any of the points, users can read the specific epoch represented. Sensors with points outside the whiskers indicate higher variability, potential artifacts, or irregularities in specific epochs. 
 
 ![STD per channel](static/01_std/02.png)  
 
-The lower horizontal bar at the bottom allows users to zoom in on a subset of sensors. This feature enables a closer examination of how the standard deviation changes within 6 sensors of the Left Frontal area across all epochs.
+A horizontal bar at the bottom allows users to zoom in on a subset of sensors, enabling a closer examination of how the standard deviation changes within specific regions. In this case, 6 sensors of the Left Frontal area.
 
 ![STD per channel](static/01_std/03)
 
-Each box plot represents the standard deviation for all sensors within a single epoch. Each dot show the standard deviation value for every specific sensor during that epoch. The sensors are colour coded following the sensor location first figure.  
+Each box plot represents the standard deviation for all sensors within a single epoch. Each dot show the standard deviation value for every specific sensor during that epoch. The sensors are color coded following the sensor location first figure.  
 This type of figure is most relevant for experiments with relevant time events.  
 
 ![STD over the epochs4](static/01_std/04)
