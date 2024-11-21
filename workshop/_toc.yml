@@ -7,5 +7,5 @@ chapters:
 - file: dataset
 - file: run_calculation
   sections:
-    - file: run_calculation/settings_explanation
+    - file: settings_explanation
 - file: run_plotting

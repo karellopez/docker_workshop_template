@@ -1,6 +1,6 @@
-# Introduction to MEG quality control
+# Introduction to MEG qc
 
-## MEG data quality control:
+## MEG data quality control
 Magnetoencephalography (MEG) data are susceptible to  noise and artifacts, which can severely corrupt the data quality. These artifacts may arise from:
 - Environmental noise sources (e.g. powerline noise)
 - Internal noise sources (e.g. eye movements of the subject)
@@ -38,7 +38,7 @@ There are 2 other metrics within MEG QC:
 
 To ensure standardization of the pipeline, MEGqc software is tailored to the **BIDS standards**.
 
-# What is BIDS?: 
+# What is BIDS?
 
 Neuroimaging experiments result in complex data that can be arranged in many different ways, and for a long time, there was no consensus how to organize and share data obtained in neuroimaging experiments. **Brain Imaging Data Structure (BIDS)**, describes a simple and easy to adopt way of organizing neuroimaging and behavioral data (Gorgolewski et al., 2016; Niso et al., 2018) facilitating collaboration between researches and saving time and effort.  _(fragment adapted from BIDS official website)._ 
 
@@ -69,11 +69,11 @@ MEGQc produces two types of amchine-readable outputs:
 - **JSON files*** with the key information for each of the quality metrics in a Python dictionary format.
 - **TSV files**** with more detailed results for some of the metrics presented as Pandas Data Frames.
 
-To ensure the clarity of the results, the pipeline includes a **plotting module** that generates visual HTML reports based onf the TSV files. For each metric, an html report is created (6 in total).
+To ensure the clarity of the results, the pipeline includes a **plotting module** that generates visual HTML reports based on the TSV files. For each metric, an html report is created (6 in total).
 
 <br>   
 
-### Next steps:
+### Next section
 In the next section, we'll walk through the content of the HTML reports.       
         
         
