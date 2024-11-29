@@ -3,9 +3,10 @@ format: jb-book
 chapters:
 - file: introduction
 - file: metrics
-- file: installation 
-- file: dataset
-- file: run_calculation
+- file: guide
   sections:
-    - file: settings_explanation
-- file: run_plotting
+    - file: guide/installation 
+    - file: guide/dataset
+    - file: guide/run_calculation
+    - file: guide/settings_explanation
+    - file: guide/run_plotting
