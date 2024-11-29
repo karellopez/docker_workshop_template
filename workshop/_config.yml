@@ -5,10 +5,10 @@
 
 #######################################################################################
 # Book settings
-title                       : "Docker for neuroscience"  # The title of the book. Will be placed in the left navbar.
-author                      : Michael Ernst, Aaron Reer  # The author of the book
+title                       : "MEGqc tutorial"  # The title of the book. Will be placed in the left navbar.
+author                      : Alexis Olguin Baxman, Aaron Reer  # The author of the book
 copyright                   : "2024"  # Copyright year to be placed in the footer
-logo                        : "static/workshop.png"  # A path to the book logo
+logo                        : "static/MEGqc.png"  # A path to the book logo
 exclude_patterns            : []  # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
 
 #######################################################################################
