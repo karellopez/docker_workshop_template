@@ -3,12 +3,11 @@ format: jb-book
 chapters:
 - file: introduction
   sections:
-    - file: details
+    - file: introduction/details
 - file: metrics
 - file: guide
   sections:
     - file: guide/installation 
     - file: guide/dataset
     - file: guide/run_calculation
-    - file: settings_explanation
     - file: guide/run_plotting
