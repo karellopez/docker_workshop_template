@@ -44,7 +44,7 @@ There are 2 other metrics within MEG QC:
 - **Peak-to-Peak automatic calculation:** This module, which relies on MNE library functions, is not used in the final version of the pipeline. Instead, the manual "Peak-to-Peak manual" is recommended.
 - **Head movement calculation:** This module functions, but requires extensive head position data.
 
-For a deeper understanding of MEGqc's core functionality, [visit the pipeline basics](details.md).
+For a deeper understanding of MEGqc's core functionality, [visit the pipeline basics page](details.md).
 
 
 
