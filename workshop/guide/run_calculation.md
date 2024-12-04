@@ -3,7 +3,7 @@
 ## Running the calculation module
 Now, we're ready to run MEGqc! First, ensure that your environment is activated by checking the terminal prompt. It should look like this:
 
-        (<your_environment_name>) **user_name:** ~$
+        (<your_environment_name>) user_name: ~$
 
 
 
@@ -25,9 +25,9 @@ If you enter `n`, you will be instructed to use the following command to specify
 
 For example, if you want to analyze only a specific subject's dataset instead of the entire dataset, you can open your copy of `settings.ini` and modify the **subjects** variable by replacing `all` with a string containing the subject ID(s), for example, `009`.
 
-Then you can run MEGqc again but with the path to your customized config file in the command like this:
+Then you can run MEGqc again, but including the path to your customized config file in the command:
 
-               run-megqc --inputdata /path/to/your/dataset/ --config /path/to/your/config/file/setting.ini
+        run-megqc --inputdata /path/to/your/dataset/ --config /path/to/your/config/file/setting.ini
 
 ### Already used settings
 If you have already processed the dataset, MEGc
