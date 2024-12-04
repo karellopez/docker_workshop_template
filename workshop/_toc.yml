@@ -2,8 +2,6 @@ root: index
 format: jb-book
 chapters:
 - file: introduction
-  sections:
-    - file: introduction/details
 - file: metrics
 - file: guide
   sections:

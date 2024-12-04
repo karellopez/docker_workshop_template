@@ -30,7 +30,7 @@ Given the dataset's size (21 participants, 24.48 GB), dowloading the full datase
     datalad install https://github.com/OpenNeuroDatasets/ds003483.git
 <br>
 
-![placeholder](static/placeholder.png)
+![placeholder](../static/placeholder.png)
 
 
 3. **Download only the sub-009 folder:** use the `get` command to download only the data for subject 009.

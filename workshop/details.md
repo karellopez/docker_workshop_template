@@ -1,4 +1,4 @@
-# Some more details
+# Pipeline basics
 
 In case you are curious about some functionalities of MEGqc, this section provides with a short overview of some key aspects:
 
